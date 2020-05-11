@@ -1,32 +1,49 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * Main
  */
 public class Game {
 
     public static void main(String[] args) {
-        Character player = new Character("Netrian", CharacterType.WARRIOR);
-        Character enemy = new Character("Sipsik", CharacterType.WIZARD);
+        World world = new World(20, 10);
+        Character player = new Character("Netrian", CharacterType.PLAYER, "X");
+        Character enemy = new Character(5, 5, "Sipsik", CharacterType.MONSTER, "o");
+        Character npc = new Character(3, 3, "Helper", CharacterType.NPC, "N");
+
+        world.addCharacters(Arrays.asList(
+            enemy, 
+            npc, 
+            player
+        ));
 
         Scanner scanner = new Scanner(System.in);
 
-        String first = scanner.nextLine();
-        System.out.println(first);
+        String input = "";
 
-        player.slogan = "Hey";
-        
-        System.out.println(player);
-        System.out.println(player.direction);
+        world.render();
+        while(!input.equals("end")){
+            input = scanner.nextLine();
 
-        player.move();
-        System.out.println(player);
-        player.changeDirection(Direction.RIGHT);
+            if (input.equals("")){
+                player.move();
+            } else if (input.equals("u")){
+                player.changeDirection(Direction.UP);
+            } else if (input.equals("d")){
+                player.changeDirection(Direction.DOWN);
+            } else if (input.equals("l")){
+                player.changeDirection(Direction.LEFT);
+            } else if (input.equals("r")){
+                player.changeDirection(Direction.RIGHT);
+            }
 
-        player.move();
-        player.move();
-        player.move();
-        player.move();
-        player.move();
+            if(player.x == npc.x && player.y == npc.y){
+                enemy.isVisible = enemy.isVisible == true ? false : true;
+            }
 
-        System.out.println(player);
+            world.render();
+        }
+
     }
 }
