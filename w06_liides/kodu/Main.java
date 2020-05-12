@@ -26,17 +26,6 @@ public class Main {
         dog1.voice();
 
 
-
-        System.out.println("Enter your personal code");
-
-        Scanner scanner2 = new Scanner(System.in);
-        EestiKood test = new EestiKood();
-        String personalCode = scanner2.next();
-        test.getGender(personalCode);
-        test.getBirthday(personalCode);
-        test.getYear(personalCode);
-
         scanner.close();
-        scanner2.close();
     }
 }
