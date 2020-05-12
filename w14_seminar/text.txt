@@ -1,0 +1,27 @@
+Staatiline muutuja või meetod on jagatud kõikide klassi poolt loodud objektide vahel.
+Antud meetod või muutuja kuulub tüübile (klassile), mitte objektidele.
+
+Staatilised meetodid
+Kuuluvad klassile, mitte objektile (isendile).
+
+Saavad kutsuda välja ainult staatilisi meetodeid.
+
+Staatilistele meetoditele saab ligi otse läbi klassi nime.
+//Syntax
+<class-name>.<method.name>
+
+Staatilisi meetodeid kasutatakse meetodites, mis ei vaja juurdepääsu objekti olekule või kasutavad ainult staatilisi välju. 
+Näiteks peamine meetod on staatiline meetod:
+public static void main(String[] args)
+
+Staatilised väljad on tuntud ka kui klassi väljad. Need on lihtsalt väljad, mille deklaratsioonides on staatiline modifikaator. 
+Staatilise välja kasutamine tähendab seda, et iga objekt ei pea unikaalse ID leidmiseks teisi objekte tundma õppima . See võiks olla kasulik, kui soovite teada, millises järjekorras olid objekti objektid loodud.
+
+
+Staatilised konstandid on täpselt nagu staatilised väljad, välja arvatud nende väärtuste muutmine. Väljasaadetes kasutatakse mõlemat lõplikke ja staatilisi modifikaatoreid.
+
+
+Plussid ja miinused:
++mälusäästlik
+-ei saa kasutada this ja super meetodeid
+-Saab ligi ainult staatilistele andmetele. Ei saa ligi mitte-staatilistele andmetele.
