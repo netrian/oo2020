@@ -9,6 +9,6 @@ public class kodu22{
         scanner.close();;
 
         kodu2 human = new kodu2(name, birthyear);
-        System.out.println("Su nimi on " + name + " ning sa" + kodu2.getYear(birthyear));
+        System.out.println("Su nimi on " + name + " ning sa" + human.getYear());
     }
 }

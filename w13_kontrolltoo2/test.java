@@ -1,40 +1,39 @@
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.*;
+import java.util.*;
 
+/**
+ * Main
+ */
 public class test {
-    // Function to print the first
-    // and last character of each word.
-    static void FirstAndLast(String str) {
-        int i;
 
-        for (i = 0; i < str.length(); i++) {
+    static String[] words;
 
-            // If it is the first word
-            // of the string then print it.
-            if (i == 0)
-                System.out.print(str.charAt(i));
-
-            // If it is the last word of the string
-            // then also print it.
-            if (i == str.length() - 1)
-                System.out.print(str.charAt(i));
-
-            // If there is a space
-            // print the successor and predecessor
-            // to space.
-            if (str.charAt(i) == ' ') {
-                System.out.print(str.charAt(i - 1) + " " + str.charAt(i + 1));
-            }
+    public static void main(String[] args) {
+        try {
+            File file = new File("D:\\UNI\\objektproge\\oo2020\\w13_kontrolltoo2\\text.txt");
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()) {
+            String data = scanner.nextLine();
+            words = data.split(" ");
         }
+        scanner.close();
+        } catch (Exception e) {
+            System.out.println("File was not found");
+            e.printStackTrace();
+        }
+
+        
     }
 
-    // Driver code
-    public static void main(String args[]) throws IOException 
-    { 
-        String str = new String(Files.readAllBytes(Paths.get("text.txt")));
-        //String str = "Geeks for Geeks"; 
-        FirstAndLast(str); 
-    } 
-} 
+    public static HashMap<Character, Integer> countOcurrence(String[] array){
+        HashMap<Character, Integer> lastLetters = new HashMap<Character, Integer>();
+        for (int i = 0; i < array.length; i++) {
+            if(lastLetters.containsKey(array[i].charAt(array[i].length()-1))){
+                lastLetters.put(array[i].charAt(array[i].length()-1), lastLetters.get(array[i].charAt(array[i].length()-1))+1);
+            } else {
+                lastLetters.put(array[i].charAt(array[i].length()-1), 1);
+            }
+        }
+        return lastLetters;
+    }
+}

@@ -3,10 +3,10 @@
  */
 import java.util.Scanner;
 
-public class Chars{
+public class Char{
     static int MAX_CHAR = 256;
 
-static void getOccuringChar( String str) {
+static void getOccuringChar(String str) {
 
     int count[] = new int[MAX_CHAR];
     int len = str.length();
@@ -19,13 +19,13 @@ static void getOccuringChar( String str) {
     for (int i = 0; i < len; i++) {
         ch[i] = str.charAt(i);
         int find = 0;
-        for (inr j = 0; j <= i; j++) {
+        for (int j = 0; j <= i; j++) {
             if (str.charAt(i) == ch[j]) {
                 find++;
             }
         }
-        if (find = 1) {
-            System.out.println("Tekstis esineb " + count[str.charAt(i)] + " " + str.charAt(i) + "tähte");
+        if (find == 1) {
+            System.out.println("Tekstis esineb " + count[str.charAt(i)] + " " + str.charAt(i) + " tähte");
         }
     }
 }

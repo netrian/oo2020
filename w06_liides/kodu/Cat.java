@@ -1,18 +1,25 @@
 public class Cat implements AnimalInterface{
-    
-    public void voice(){
-        System.out.println("Meow");
-    }
 
-    public void sleep(int hours){
+    @Override
+    public void sleep(int hours) {
         System.out.println("This cat sleeps "+hours+" hours a day");
+
     }
 
-    public void attack(boolean kill){
-        if(kill == true){
+    @Override
+    public void voice() {
+        System.out.println("Meow");
+
+    }
+
+    @Override
+    public void attack(boolean agro) {
+        if(agro == true){
             System.out.println("This cat will try to kill you");
         } else {
             System.out.println("This cat is friendly");
         }
     }
+    
+
 }

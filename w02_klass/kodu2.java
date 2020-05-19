@@ -4,8 +4,7 @@ public class kodu2{
     public kodu2(String name, int birthyear){
         this.birthyear = birthyear;
     }
-
-    public static String getYear(int birthyear) {
+    public String getYear() {
         if (birthyear<2000){
             return " varsti sured";
         } else if (birthyear<2005){

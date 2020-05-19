@@ -1,3 +1,5 @@
+package kodu;
+
 public class triangle extends shape {
     int kylg_a;
     int kylg_b;
@@ -14,12 +16,12 @@ public class triangle extends shape {
     }
 
     @Override
-    public double getKYmbermoot(){
+    public double getYmbermoot(){
         return kylg_a + kylg_b + kylg_c;
     }
 
     @Override
-    public double getKPindala() {
+    public double getPindala() {
         return (kylg_a * korgus_h) / 2;
     }
 }
