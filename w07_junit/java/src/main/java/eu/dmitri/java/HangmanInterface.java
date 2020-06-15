@@ -1,3 +1,5 @@
+package eu.dmitri.java;
+
 public interface HangmanInterface {
 
 	public String wordFoundContent();

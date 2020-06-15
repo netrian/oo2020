@@ -6,7 +6,7 @@ import java.util.List;
 public class JokeRepo {
     public static List<String> jokesList = new ArrayList<>();
 
-    public static List<String> addJoke(){
+    public static List<String> addJoke() {
         jokesList = List.of(
             new String("I can’t believe I got fired from the calendar factory: all I did was take a day off!"),
             new String("Money talks: mine always says is goodbye."),

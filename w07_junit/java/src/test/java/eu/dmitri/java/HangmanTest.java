@@ -1,14 +1,13 @@
-package com.company;
+package eu.dmitri.java;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import static org.junit.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static org.junit.Assert.assertNotSame;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 
 
@@ -73,4 +72,4 @@ class HangmanTest {
         //kontrollin kas on char added
         Assert.assertNotSame("Is there a char added", null, c);
     }
-}
+} 
